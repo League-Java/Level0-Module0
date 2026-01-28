@@ -2,25 +2,18 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
 	"name": "Java",
-	// Build from local Dockerfile so Yarn key is present before feature installs
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"image": "ghcr.io/league-infrastructure/jtljava:latest",
 
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
-			"installMaven": "true",
-			"installGradle": "true"
+			"installMaven": "false",
+			"installGradle": "false"
 		},
 		"ghcr.io/devcontainers/features/desktop-lite:1": {
-			"noVncVersion": "1.6.0",
-			"password": "code4life",
-			"webPort": "6080",
-			"vncPort": "5901"
+			"password" : "code4life"
 		}
 	},
-
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [6080, 5901],
@@ -53,4 +46,3 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 }
-
